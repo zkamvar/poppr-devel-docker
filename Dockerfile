@@ -1,5 +1,5 @@
 # Start with R-devel with Address Sanitizer
-FROM rocker/r-devel-san:latest
+FROM rocker/r-devel-ubsan-clang:latest
 
 RUN apt-get -y update -qq \ 
 &&  apt-get -y install -t unstable libxml2-dev libssl-dev \
