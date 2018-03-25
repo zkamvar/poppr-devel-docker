@@ -6,5 +6,4 @@ RUN apt-get -y update -qq \
 &&  apt-get -y install pandoc pandoc-citeproc \
 &&  ASAN_OPTIONS=detect_leaks=0 RD -e "install.packages(c('MASS', 'lattice', 'nlme', 'mgcv', 'Matrix', 'boot', 'cluster'), repos = 'http://cran.rstudio.org')";
 
-RUN ASAN_OPTIONS=detect_leaks=0 RD -e 'source("http://bioconductor.org/biocLite.R"); biocLite("Biostrings");' \
-&&  ASAN_OPTIONS=detect_leaks=0 RD -e 'install.packages(c("stringi", "glue", "devtools", "poppr"), dep = TRUE, repos= "http://cran.rstudio.org");';
+RUN ASAN_OPTIONS=detect_leaks=0 RD -e 'install.packages(c("roxygen2", "rmarkdown", "knitcitations", "stringi", "glue", "devtools", "poppr"), dep = TRUE, repos= "http://cran.rstudio.org");';
